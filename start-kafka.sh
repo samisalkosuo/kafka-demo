@@ -23,8 +23,11 @@ share.coordinator.state.topic.replication.factor=1
 sha re.coordinator.state.topic.min.isr=1
 log.dirs=/tmp/kraft-combined-logs
 log.retention.hours=0
-log.retention.minutes=1
+log.retention.minutes=10
 log.retention.check.interval.ms=20000
+#100MB = 104857600 bytes
+log.segment.bytes=104857600                  
+log.retention.bytes=104857600
 listener.security.protocol.map=CONTROLLER:PLAINTEXT,BROKER:PLAINTEXT,CLIENT:PLAINTEXT,UI:PLAINTEXT
 EOF
 
