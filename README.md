@@ -1,2 +1,4 @@
 # kafka-demo
 Kafka container with UI for demo/test/dev purposes. 
+
+Configure using environment variables, see here https://github.com/apache/kafka/blob/trunk/docker/examples/README.md
