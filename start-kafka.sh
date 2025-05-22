@@ -26,8 +26,9 @@ log.retention.hours=0
 log.retention.minutes=10
 log.retention.check.interval.ms=20000
 #100MB = 104857600 bytes
-log.segment.bytes=104857600                  
-log.retention.bytes=104857600
+#250MB = 262144000 bytes
+log.segment.bytes=104857600
+log.retention.bytes=262144000
 listener.security.protocol.map=CONTROLLER:PLAINTEXT,BROKER:PLAINTEXT,CLIENT:PLAINTEXT,UI:PLAINTEXT
 EOF
 
