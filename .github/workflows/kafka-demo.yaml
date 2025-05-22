@@ -10,7 +10,7 @@ on:
       - '!**.adoc'
 #      - './**'
 jobs:
-  contracts-rest-service-container-build-and-push:
+  kafka-demo-container-build-and-push:
     uses: ./.github/workflows/reusable-container-build-and-push.yaml
     with:
       imagename: kazhar/kafka-demo
