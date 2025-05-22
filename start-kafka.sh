@@ -28,7 +28,5 @@ log.retention.check.interval.ms=20000
 listener.security.protocol.map=CONTROLLER:PLAINTEXT,BROKER:PLAINTEXT,CLIENT:PLAINTEXT,UI:PLAINTEXT
 EOF
 
-
-
+#start kafka
 exec /etc/kafka/docker/run
-
