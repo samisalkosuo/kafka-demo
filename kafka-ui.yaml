@@ -4,7 +4,7 @@ server:
 kafka:
   clusters:
     - name: local
-      bootstrapServers: localhost:9092
+      bootstrapServers: localhost:39092
 
 dynamic.config.enabled: true
 
