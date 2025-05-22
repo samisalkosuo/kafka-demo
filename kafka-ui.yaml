@@ -24,4 +24,3 @@ logging:
     #org.springframework.http.codec.json.Jackson2JsonDecoder: DEBUG
     reactor.netty.http.server.AccessLog: INFO
     org.springframework.security: INFO
-

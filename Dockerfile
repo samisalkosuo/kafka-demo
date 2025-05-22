@@ -1,6 +1,5 @@
 FROM apache/kafka:latest
 
-
 #kafka-ui
 WORKDIR /tmp
 
@@ -21,7 +20,6 @@ WORKDIR /
 EXPOSE 9092
 
 COPY start-kafka.sh /etc/kafka/docker/
-
 
 USER appuser
 #VOLUME ["/etc/kafka/secrets", "/var/lib/kafka/data", "/mnt/shared/config"]
