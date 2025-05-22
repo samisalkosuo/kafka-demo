@@ -15,7 +15,7 @@ COPY kafka-ui.yaml /tmp/kafka-ui.yaml
 EXPOSE 8080
 
 #kafka
-ENV KAFKA_EXTERNAL_PORT=9092
+ENV EXTERNAL_PORT_FOR_KAFKA=9092
 
 WORKDIR /
 
