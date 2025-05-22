@@ -9,7 +9,7 @@ fi
 cat <<EOF > /mnt/shared/config/server.properties
 node.id=1
 listeners=CONTROLLER://:29093,CLIENT://:9092,BROKER://:19092,UI://:39092
-advertised.listeners=CLIENT://${HOSTNAME}:9092,UI://localhost:39092,BROKER://localhost:19092
+advertised.listeners=CLIENT://${HOSTNAME}:${KAFKA_EXTERNAL_PORT},UI://localhost:39092,BROKER://localhost:19092
 process.roles=broker,controller
 controller.quorum.voters=1@localhost:29093
 inter.broker.listener.name=BROKER
