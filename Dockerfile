@@ -8,14 +8,14 @@ ENV AUTH_TYPE="LOGIN_FORM"
 ENV SPRING_SECURITY_USER_NAME=admin
 ENV SPRING_SECURITY_USER_PASSWORD=passw0rd
 
-ENV KAFKA_UI_JAR=kafka-ui-api-v0.7.2.jar
-RUN wget https://github.com/provectus/kafka-ui/releases/download/v0.7.2/${KAFKA_UI_JAR}
+ENV UI_JAR=kafka-ui-api-v0.7.2.jar
+RUN wget https://github.com/provectus/kafka-ui/releases/download/v0.7.2/${UI_JAR}
 COPY kafka-ui.yaml /tmp/kafka-ui.yaml
 
 EXPOSE 8080
 
 #kafka
-ENV EXTERNAL_PORT_FOR_KAFKA=9092
+ENV EXTERNAL_PORT=9092
 
 WORKDIR /
 
