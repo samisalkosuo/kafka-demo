@@ -1,5 +1,21 @@
 = kafka-demo
 
-Kafka container with UI for demo/test/dev purposes. 
+Kafka container with UI for demo/test/dev purposes. Already configured and includes UI (https://github.com/provectus/kafka-ui).
 
-Configure using environment variables, see here https://github.com/apache/kafka/blob/trunk/docker/examples/README.md
+
+Run using:
+
+```
+podman run -it --rm -e SPRING_SECURITY_USER_PASSWORD=newpassw0rd -e HOSTNAME=mykafka.example.com -e EXTERNAL_PORT=19092 -p 19092:9092 -p 8080:8080 docker.io/kazhar/kafka-demo:latest
+```
+
+Environment variables:
+
+* _SPRING_SECURITY_USER_NAME_: user name for UI (default: admin).
+* _SPRING_SECURITY_USER_PASSWORD_: password for UI (default: passw0rd).
+* _HOSTNAME_: server FQDN/IP. Mandatory if you want external access.
+* _EXTERNAL_PORT_: exposed port for Kafka. Mandatory if you want external access.
+
+_HOSTNAME_ and _EXTERNAL_PORT_ are used to configure Kafka when container is started.
+
+See link:start-kafka.sh[start-kafka.sh] for all the configuration options.

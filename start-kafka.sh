@@ -25,6 +25,7 @@ log.dirs=/tmp/kraft-combined-logs
 log.retention.hours=0
 log.retention.minutes=10
 log.retention.check.interval.ms=20000
+log.roll.hours=1
 #100MB = 104857600 bytes
 #250MB = 262144000 bytes
 log.segment.bytes=104857600

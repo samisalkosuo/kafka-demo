@@ -3,13 +3,19 @@ FROM apache/kafka:latest
 #kafka-ui
 WORKDIR /tmp
 
-ENV ENABLE_KAFKA_UI=true
-ENV AUTH_TYPE="LOGIN_FORM"
+#set user name and password for UI
 ENV SPRING_SECURITY_USER_NAME=admin
 ENV SPRING_SECURITY_USER_PASSWORD=passw0rd
 
+#not really meant to be changed
+ENV ENABLE_KAFKA_UI=true
+ENV AUTH_TYPE="LOGIN_FORM"
 ENV UI_JAR=kafka-ui-api-v0.7.2.jar
+
+#download UI jar
 RUN wget https://github.com/provectus/kafka-ui/releases/download/v0.7.2/${UI_JAR}
+
+#kafka-ui configuration
 COPY kafka-ui.yaml /tmp/kafka-ui.yaml
 
 EXPOSE 8080
