@@ -11,11 +11,12 @@ podman run -it --rm -e SPRING_SECURITY_USER_PASSWORD=newpassw0rd -e HOSTNAME=myk
 
 Environment variables:
 
-* _SPRING_SECURITY_USER_NAME_: user name for UI (default: admin).
-* _SPRING_SECURITY_USER_PASSWORD_: password for UI (default: passw0rd).
-* _HOSTNAME_: server FQDN/IP. Mandatory if you want external access.
-* _EXTERNAL_PORT_: exposed port for Kafka. Mandatory if you want external access.
+* _SPRING_SECURITY_USER_NAME_ - user name for UI (default: admin).
+* _SPRING_SECURITY_USER_PASSWORD_ - password for UI (default: passw0rd).
+* _HOSTNAME_ - server FQDN/IP. Mandatory if you want external access.
+* _EXTERNAL_PORT_ - exposed port for Kafka. Default is 9092. Mandatory if you want external access.
+* _GENERATE_HEALTHCARE_VISIT_MESSAGES_ - set to true to generate demo messages.
 
-_HOSTNAME_ and _EXTERNAL_PORT_ are used to configure Kafka when container is started.
+*Note*: _HOSTNAME_ and _EXTERNAL_PORT_ are used to configure Kafka when container is started. 
 
 See link:start-kafka.sh[start-kafka.sh] for all the configuration options.

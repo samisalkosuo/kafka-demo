@@ -5,6 +5,11 @@ if [ "$ENABLE_KAFKA_UI" == "true" ]; then
   java -Dspring.config.additional-location=/tmp/kafka-ui.yaml --add-opens java.rmi/javax.rmi.ssl=ALL-UNNAMED -jar /tmp/${UI_JAR} &
 fi
 
+if [ "$GENERATE_HEALTHCARE_VISIT_MESSAGES" == "true" ]; then
+  bash /tmp/generate-healthcare-visits.sh &
+fi
+
+
 #create server.properties
 cat <<EOF > /mnt/shared/config/server.properties
 node.id=1

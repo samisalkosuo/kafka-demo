@@ -22,10 +22,13 @@ EXPOSE 8080
 
 #kafka
 ENV EXTERNAL_PORT=9092
+ENV GENERATE_HEALTHCARE_VISIT_MESSAGES=false
 
 WORKDIR /
 
 EXPOSE 9092
+
+COPY generate-healthcare-visits.sh /tmp/
 
 COPY start-kafka.sh /etc/kafka/docker/
 
