@@ -1,6 +1,8 @@
 = kafka-demo
 
-Kafka container with UI for demo/test/dev purposes. Already configured and includes UI (https://github.com/provectus/kafka-ui).
+Kafka container with UI for demo/test/dev purposes. 
+
+Already configured and includes UI (https://github.com/provectus/kafka-ui).
 
 
 Run using:
@@ -15,8 +17,29 @@ Environment variables:
 * _SPRING_SECURITY_USER_PASSWORD_ - password for UI (default: passw0rd).
 * _HOSTNAME_ - server FQDN/IP. Mandatory if you want external access.
 * _EXTERNAL_PORT_ - exposed port for Kafka. Default is 9092. Mandatory if you want external access.
-* _GENERATE_HEALTHCARE_VISIT_MESSAGES_ - set to true to generate demo messages.
+* _GENERATE_HEALTHCARE_VISIT_MESSAGES_ - set to true to generate demo messages to topic `healthcare-visits`.
+
+Access UI using http://localhost:8080, where 8080 is the exposed UI port.
 
 *Note*: _HOSTNAME_ and _EXTERNAL_PORT_ are used to configure Kafka when container is started. 
 
 See link:start-kafka.sh[start-kafka.sh] for all the configuration options.
+
+
+## Demo messages
+
+If environment variable _GENERATE_HEALTHCARE_VISIT_MESSAGES_ is true, then messages are generated about once per second to topic `healthcare-visits`.
+
+Demo messages are JSON-formatted. For example:
+
+```
+{
+	"patient_id": 584,
+	"facility_id": 11,
+	"visit_start_ts": "2025-05-31T12:23:08Z",
+	"visit_end_ts": "2025-05-31T12:34:08Z",
+	"chapter_code": "K",
+	"triage_level": 5,
+	"diagnosis_code_dim": 199
+}
+```
